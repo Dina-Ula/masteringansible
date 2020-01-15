@@ -1,0 +1,16 @@
+---
+-
+  name: Dictionary to List
+  hosts: localhost
+
+  vars:
+   tags:
+     Application: "payment"
+     Environment: "dev"
+
+  tasks:
+
+  - name: Debug list
+    debug:
+     var: tags | ec2tagsdict2items | to_json
+...
